@@ -49,7 +49,7 @@ if uploaded_file is not None:
     df.columns = ['R']
     R0 = df.iloc[0, 0]
     df['A'] = df['R'] / R0
-    dt = vibration_data["time[ms]"] / 1000
+    dt = vibration_data["time[ms]"]
     t = []
     for i in range(len(df)):
         t.append(dt[i])
@@ -79,7 +79,7 @@ if uploaded_file is not None:
     fig1.add_trace(go.Scatter(x=x1, y=y1, mode='lines', name='Autocorrelation Factor'))
     fig1.update_layout(
         title="Autocorrelation Factor",
-        xaxis_title="Time [s]",
+        xaxis_title="Time [ms]",
         yaxis_title="Autocorrelation Factor",
         xaxis_range=[0, 200],  # Zoom
         hovermode="x unified"  # Afficher les coordonnées au survol
