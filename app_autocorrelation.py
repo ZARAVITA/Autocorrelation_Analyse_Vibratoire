@@ -19,7 +19,7 @@ uploaded_file = st.file_uploader("Importez votre fichier CSV", type=["csv"])
 
 if uploaded_file is not None:
     # Lecture du fichier CSV
-    vibration_data = pd.read_csv(uploaded_file, sep=";")
+    vibration_data = pd.read_csv(uploaded_file, sep=";", skiprows=1)
     
     # Affichage des premières lignes du dataset
     st.subheader("Aperçu des données")
