@@ -26,7 +26,7 @@ if uploaded_file is not None:
     st.write(vibration_data.head())
 
     # Création des données de waveform
-    x1 = vibration_data["time[ms]"] / 1000  # Convertir en secondes
+    x1 = vibration_data.iloc[:, 0].values / 1000 # Convertir en secondes
     y1 = vibration_data[" amplitude[g]"]
 
     # Calcul de la fréquence d'échantillonnage
